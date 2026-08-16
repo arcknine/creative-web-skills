@@ -79,7 +79,7 @@ After integration, run validation proportional to the affected production surfac
 ## Reference routing
 
 - Read [visual direction](references/visual-direction.md) when the brief lacks a clear concept, and [anti-AI slop](references/anti-ai-slop.md) before evaluating any direction.
-- Read [typography](references/typography.md), [layout](references/layout.md), [color](references/color.md), [imagery](references/imagery.md), and [design systems](references/design-systems.md) when changing those systems.
+- Read [design systems](references/design-systems.md) before creating or changing shared CSS, Tailwind utilities, tokens, or primitives; centralize tunable values instead of scattering raw arbitrary values. Read [typography](references/typography.md), [layout](references/layout.md), [color](references/color.md), and [imagery](references/imagery.md) when changing those systems.
 - Read [responsive design](references/responsive-design.md) before mobile refinement and [accessible performance](references/accessible-performance.md) before media-, interaction-, or motion-heavy implementation.
 - Read [landing pages](references/landing-pages.md) or [game sites](references/game-sites.md) only for the relevant category.
 - Use a relevant example as a brief format, never a template: [luxury minimal](examples/luxury-minimal.md), [sports editorial](examples/sports-editorial.md), [gaming](examples/gaming.md), or [creative agency](examples/creative-agency.md).
@@ -91,4 +91,5 @@ After integration, run validation proportional to the affected production surfac
 - The user selects or approves a direction before production integration begins.
 - Existing application and backend behavior remain untouched during exploration.
 - Prototype iteration uses the smallest useful validation; post-integration validation matches scope and risk.
+- Production and shared styles express tunable values through semantic tokens rather than scattered hard-coded values.
 - The approved result is original, accessible, performant, responsive, and verified in the browser.
