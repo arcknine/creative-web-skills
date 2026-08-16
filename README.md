@@ -71,6 +71,34 @@ Validate a local checkout without installing it:
 npx skills add . --list
 ```
 
+## Updating installed skills
+
+Update one project-scoped skill installed through the Skills CLI:
+
+```bash
+npx skills update creative-frontend-design -p
+```
+
+Update one globally installed skill:
+
+```bash
+npx skills update creative-frontend-design -g
+```
+
+Update all installed skills in the selected scope:
+
+```bash
+npx skills update
+```
+
+Pass multiple names to update this collection together, and add `-y` to skip the scope prompt:
+
+```bash
+npx skills update creative-frontend-design motion-art-direction frontend-visual-qa -y
+```
+
+The update command relies on source information recorded during CLI installation. If a skill was copied manually, reinstall it with `npx skills add arcknine/creative-web-skills` so future updates can be tracked.
+
 ## Claude Code
 
 Claude Code supports the Agent Skills format and can invoke a skill automatically from its description or directly as `/skill-name`. Use the targeted CLI command above, or copy a complete skill folder to `~/.claude/skills/` for user scope or `.claude/skills/` for project scope. See [Claude Code's skills documentation](https://code.claude.com/docs/en/skills) for discovery and precedence behavior.
