@@ -26,7 +26,7 @@ The portable core of each package is a spec-compliant `SKILL.md` plus relative l
 
 ## Prototype-first workflow
 
-For a new homepage, landing page, major redesign, or substantial section redesign, `creative-frontend-design` creates three meaningfully different isolated prototypes by default. It compares them with shared content, waits for the user's selection, refines and visually verifies the chosen direction, then integrates that visual specification with the application's existing business logic.
+For a new homepage, landing page, major redesign, or substantial section redesign, `creative-frontend-design` creates three meaningfully different isolated prototypes by default. A lightweight floating dock on every prototype route allows direct switching among directions without returning to the design-lab index. The skill compares them with shared content, waits for the user's selection, refines and visually verifies the chosen direction, then integrates that visual specification with the application's existing business logic.
 
 Three is a default, not a constraint. Users can request one or five directions, combine ideas across prototypes, or iterate a named direction. Small changes to an approved design stay on that design and do not create three new prototypes.
 

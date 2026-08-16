@@ -6,6 +6,7 @@ Use this workflow to separate visual exploration from production integration. Op
 
 - [Choose the branch](#choose-the-branch)
 - [Set up the lab](#set-up-the-lab)
+- [Add a comparison dock](#add-a-comparison-dock)
 - [Create three real alternatives](#create-three-real-alternatives)
 - [Use realistic mock data](#use-realistic-mock-data)
 - [Protect production](#protect-production)
@@ -40,9 +41,30 @@ Choose the lightest isolated environment the framework supports. Prefer routes o
 /design-lab/homepage/c
 ```
 
-Equivalent component stories, static entries, or `/prototypes/homepage-01` routes are valid. Keep URLs stable enough for screenshot comparison. Add a plain index with links, direction names, and optional thumbnail previews when it materially shortens comparison; do not build prototype management infrastructure.
+Equivalent component stories, static entries, or `/prototypes/homepage-01` routes are valid. Keep URLs stable enough for screenshot comparison. An index may provide direction summaries and thumbnails, but it is not the primary navigation between prototypes.
 
 Keep prototype styles scoped so they cannot leak into production routes. Reuse safe project primitives—reset, font loading, icon access, media utilities—only when they accelerate work without constraining divergence.
+
+## Add a comparison dock
+
+For two or more directions, render one lightweight shared switcher on every prototype route. Make it a fixed floating dock—typically bottom-center or in a safe corner—that lets the user open A, B, C, and the optional overview directly. Use the framework router and prefetch when available so switching feels immediate; avoid a transition that obscures visual comparison.
+
+Keep the dock visually neutral and independent from every prototype's art direction. Scope its styles, place it above prototype content, respect safe-area insets, and prevent it from changing page layout. Make it compact or horizontally scrollable on narrow screens rather than covering the design.
+
+Meet this interaction contract:
+
+- identify the control with an accessible label such as `Prototype switcher`;
+- expose every direction by a short name or letter and mark the current route with `aria-current="page"` plus a non-color visual state;
+- use real links when each direction has a URL, preserving open-in-new-tab and browser history behavior;
+- provide visible focus and touch-friendly targets;
+- support optional shortcuts such as `Alt+1`, `Alt+2`, and `Alt+3` only when they do not intercept typing in inputs or editable content;
+- keep the current mock-data scenario or shared query state when switching where practical;
+- provide collapse or hide behavior for unobstructed inspection and screenshots, with a discoverable way to restore the dock;
+- keep the dock and its dependencies out of production routes and bundles.
+
+Do not blindly preserve raw scroll pixels between directions with different content lengths. Preserve a shared section anchor or named comparison state when the prototypes have equivalent landmarks; otherwise start at a predictable position.
+
+The dock is the one intentional shared UI primitive across prototypes. Do not use it as a reason to force the prototypes themselves through common layout or component abstractions.
 
 ## Create three real alternatives
 
@@ -91,6 +113,7 @@ Validate the question being answered, not the whole repository:
 | --- | --- |
 | Color, spacing, type size, crop, or layout | Render the affected route; inspect the relevant viewport and obvious overflow |
 | Prototype component behavior | Exercise that component and check relevant console/runtime errors |
+| Comparison dock | Switch from every direction, confirm active/focus states, test narrow screens, and verify hide/restore behavior |
 | Responsive composition | Inspect the affected breakpoints plus one width on each side of the transition |
 | Animation or interaction | Observe trigger, interruption, final state, touch behavior, and reduced-motion alternative |
 | Shared mock-data shape | Render all prototypes that consume it and include one edge case |

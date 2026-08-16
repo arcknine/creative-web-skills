@@ -50,7 +50,7 @@ Give each direction a defensible thesis and a different dominant gesture. Use sh
 
 ### 3. Build isolated prototypes
 
-Create framework-appropriate routes or components such as `/design-lab/homepage/a`, `/b`, and `/c`, plus a minimal comparison index when practical. Share realistic mock data, not a rigid presentation architecture. Let prototype code remain disposable when abstraction would limit exploration.
+Create framework-appropriate routes or components such as `/design-lab/homepage/a`, `/b`, and `/c`. When more than one direction exists, add one shared lab-only floating switcher to every prototype route so the user can move directly among A, B, and C without returning to an index. Keep an optional overview index for summaries or thumbnails. Share realistic mock data, not a rigid presentation architecture; the switcher may be shared even when prototype presentation code diverges.
 
 Protect production behavior. Do not connect prototypes to real APIs, databases, authentication, payments, jobs, controllers, or stable business logic merely to preview design. Include mock-content extremes that expose visual fragility.
 
@@ -90,6 +90,7 @@ After integration, run validation proportional to the affected production surfac
 - Each prototype has a distinct thesis and dominant gesture, not merely different colors or minor layout changes.
 - The user selects or approves a direction before production integration begins.
 - Existing application and backend behavior remain untouched during exploration.
+- Every multi-direction lab supports direct, accessible switching from each prototype route without an index-page round trip.
 - Prototype iteration uses the smallest useful validation; post-integration validation matches scope and risk.
 - Production and shared styles express tunable values through semantic tokens rather than scattered hard-coded values.
 - The approved result is original, accessible, performant, responsive, and verified in the browser.
