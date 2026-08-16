@@ -1,0 +1,4 @@
+interface:
+  display_name: "Creative Frontend Design"
+  short_description: "Prototype distinctive frontend directions"
+  default_prompt: "Use $creative-frontend-design to create three distinct isolated prototypes for this substantial frontend design, compare them, and wait for my selection before integration."

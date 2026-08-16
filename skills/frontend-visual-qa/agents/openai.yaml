@@ -1,0 +1,4 @@
+interface:
+  display_name: "Frontend Visual QA"
+  short_description: "Critique and polish implemented web interfaces"
+  default_prompt: "Use $frontend-visual-qa to inspect this frontend visually, prioritize issues, implement fixes, and verify it again."
