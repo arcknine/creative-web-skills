@@ -13,7 +13,6 @@ Use this workflow to separate visual exploration from production integration. Op
 - [Apply the smallest useful validation](#apply-the-smallest-useful-validation)
 - [Compare and select](#compare-and-select)
 - [Refine and visually verify](#refine-and-visually-verify)
-- [Checkpoint every prototype and branch](#checkpoint-every-prototype-and-branch)
 - [Integrate the approved specification](#integrate-the-approved-specification)
 - [Validate production](#validate-production)
 
@@ -150,20 +149,7 @@ Keep rejected prototypes available for reference and stop polishing them. Consol
 
 Use `motion-art-direction` for the refined prototype's substantial choreography, allowing exploratory implementation to remain local until the language is approved. Use `frontend-visual-qa` against the isolated refined prototype. Inspect desktop, tablet, mobile, hierarchy, typography, crops, spacing, rhythm, motion, interaction, accessibility basics, and mock-data stressors before integration.
 
-## Checkpoint every prototype and branch
-
-After the user approves production integration, preserve the complete design lab before changing production code. In a Git repository:
-
-1. Inspect the current branch and worktree. Identify every prototype route, shared switcher, mock-data file, scoped style, asset, and design-lab dependency created by the exploration.
-2. Create and switch to a dedicated archive branch such as `design/<scope>-prototypes`. Choose a collision-free name after inspecting existing branches.
-3. Stage the complete design lab with explicit paths and commit it as one prototype checkpoint. Include approved, rejected, and hybrid directions so every reviewed alternative remains runnable. Exclude unrelated user changes, secrets, generated output, caches, and production edits that are not part of the lab. Pause for direction when unrelated changes overlap files required by the checkpoint.
-4. Verify the checkpoint is clean with respect to the staged prototype files and record its branch and commit ID.
-5. Create and switch to a separate branch such as `design/<scope>-integration` from that checkpoint. Remove the complete design lab from this branch before production integration: every prototype route including the selected direction, the comparison index and switcher, prototype-only mock data, scoped styles, experimental assets, and lab-only dependencies. Retain a file only when it is deliberately being converted into a production asset or component.
-6. Verify that no prototype route, switcher, mock-only entry point, or lab-only dependency remains reachable or bundled on the integration branch. Then implement the approved direction directly in the existing production routes and components while leaving the archive branch at the complete prototype checkpoint.
-
-Treat the archive branch and its commit as the reviewable source for every prototype. Treat the integration branch as production-only: it contains the working application and the implementation derived from the approved visual specification, not a design lab or prototype copy. Commit locally; push only when the user explicitly requests it.
-
-When Git is unavailable, preserve every direction in the isolated lab, report that no branch checkpoint could be created, and obtain direction before production integration.
+Before changing production code, execute [prototype archive and production handoff](prototype-handoff.md). When Git is unavailable, preserve every direction in the isolated lab, report that no branch checkpoint can be created, and obtain direction before integration.
 
 ## Integrate the approved specification
 

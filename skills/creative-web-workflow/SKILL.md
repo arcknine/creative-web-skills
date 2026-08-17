@@ -1,6 +1,6 @@
 ---
 name: creative-web-workflow
-description: Coordinate the complete creative-website lifecycle across art direction, isolated prototypes, motion, rendered visual QA, production integration, and final validation. Use for substantial end-to-end website or page creation and redesign when the task spans concept exploration through production verification, rather than one specialist phase.
+description: Coordinate a substantial complete creative-website redesign across discovery, art direction, isolated prototypes, motion, rendered visual QA, production integration, and final validation. Use for brand-level, multi-page, or full design-to-production work. Use rapid-ui-redesign when an existing working UI needs fast visual experimentation while retaining its identity and application architecture.
 ---
 
 # Creative web workflow
@@ -40,6 +40,6 @@ After approval, execute the design skill's prototype-checkpoint, branch-handoff,
 ## Completion criteria
 
 - The phases run in order and both approval gates are satisfied when applicable.
-- Every reviewed prototype remains available from the archive checkpoint. When Git is available, the separate integration branch contains no prototype lab and implements the selected visual specification directly in the production application.
+- The design skill's prototype handoff criteria pass before production integration.
 - Every specialist's applicable completion criteria pass in its own phase.
 - The final handoff names the selected direction, production validation performed, rendered evidence, and any unverified risk.

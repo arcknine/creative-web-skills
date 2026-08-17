@@ -1,0 +1,4 @@
+interface:
+  display_name: "Rapid UI Redesign"
+  short_description: "Explore lightweight page redesign variants"
+  default_prompt: "Use $rapid-ui-redesign to create lightweight switchable variants for this existing page, compare them, and fold the selected direction into production."
