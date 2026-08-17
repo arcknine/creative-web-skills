@@ -72,7 +72,7 @@ When `frontend-visual-qa` is unavailable, render the refined prototype at repres
 
 ### 6. Integrate after approval
 
-Treat the approved prototype as a visual specification expressed in working code. Port its presentation into the application, replace mocks with real data, reuse existing APIs, preserve business rules, and adapt components to production architecture. Do not replace proven application logic with prototype logic or use redesign as permission for unrelated cleanup.
+For substantial prototype-first work, execute [Checkpoint every prototype and branch](references/prototype-workflow.md#checkpoint-every-prototype-and-branch) before changing production code. Treat the approved prototype as a visual specification expressed in working code. Port its presentation into the application, replace mocks with real data, reuse existing APIs, preserve business rules, and adapt components to production architecture. Do not replace proven application logic with prototype logic or use redesign as permission for unrelated cleanup.
 
 ### 7. Validate production
 
@@ -92,6 +92,7 @@ After integration, run validation proportional to the affected production surfac
 - Each prototype has a distinct thesis and dominant gesture, not merely different colors or minor layout changes.
 - The user selects or approves a direction before production integration begins.
 - Existing application and backend behavior remain untouched during exploration.
+- Every reviewed prototype is preserved in a committed archive checkpoint before substantial production integration. When Git is available, implementation continues on a separate production-only integration branch with the complete prototype lab removed.
 - Every multi-direction lab supports direct, accessible switching from each prototype route without an index-page round trip.
 - Prototype iteration uses the smallest useful validation; post-integration validation matches scope and risk.
 - Production and shared styles express tunable values through semantic tokens rather than scattered hard-coded values.

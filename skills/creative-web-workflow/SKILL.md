@@ -35,10 +35,11 @@ Before pausing, report `phase: integration approval`, the approved-direction spe
 
 ### 5. Integrate and validate
 
-After approval, execute the design skill's production-integration and validation stages. Then execute the visual-QA skill against the production result and use the motion skill for any integration-specific motion regression. Run only the automated checks selected by the design skill's risk-proportionate validation rules.
+After approval, execute the design skill's prototype-checkpoint, branch-handoff, production-integration, and validation stages in order. Then execute the visual-QA skill against the production result and use the motion skill for any integration-specific motion regression. Run only the automated checks selected by the design skill's risk-proportionate validation rules.
 
 ## Completion criteria
 
 - The phases run in order and both approval gates are satisfied when applicable.
+- Every reviewed prototype remains available from the archive checkpoint. When Git is available, the separate integration branch contains no prototype lab and implements the selected visual specification directly in the production application.
 - Every specialist's applicable completion criteria pass in its own phase.
 - The final handoff names the selected direction, production validation performed, rendered evidence, and any unverified risk.

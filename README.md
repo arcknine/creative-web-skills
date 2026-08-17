@@ -30,6 +30,8 @@ The aim is not to reproduce any reference site. It is to extract transferable pr
 
 The specialists work independently. The full workflow is a collection-level orchestrator: install it with all three specialists because its portable `SKILL.md` delegates each phase to those sibling skills.
 
+For substantial prototype-first work in a Git repository, approval checkpoints the complete design lab—including rejected and hybrid directions—on a dedicated prototype branch. A separate production-only integration branch removes the entire prototype lab, then implements the selected visual specification in the existing application. Every explored direction remains available from the prototype archive branch.
+
 ## Compatibility
 
 The portable core of each specialist is a spec-compliant `SKILL.md` plus relative links to optional references and examples. The combined workflow is portable when installed with its three sibling skills. The collection declares no runtime, MCP, framework, or operating-system dependency. Agents may use whatever frontend stack and browser tooling the project already provides.
