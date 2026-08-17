@@ -31,11 +31,11 @@ Extract principles only. Create original branding, composition, copy treatment, 
 
 Choose the prototype-first branch unless the user explicitly changes the count, asks for a small or single-direction change, names an existing prototype to iterate, or has already approved the direction and requested integration.
 
-### 2. Frame three directions
+### 2. Frame the directions
 
-Derive all directions from the project's brand, audience, content, assets, product, desired emotion, references, and technical constraints. Do not reuse a fixed editorial/immersive/minimal trio across projects.
+Derive the chosen number of directions from the project's brand, audience, content, assets, product, desired emotion, references, and technical constraints. Do not reuse a fixed editorial/immersive/minimal trio across projects.
 
-Write a compact brief for A, B, and C covering:
+Write a compact brief for each direction covering:
 
 1. Visual concept and brand personality
 2. Typography language
@@ -46,7 +46,7 @@ Write a compact brief for A, B, and C covering:
 7. Section rhythm and density
 8. Responsive transformation
 
-Give each direction a defensible thesis and a different dominant gesture. Use shared content to make comparison honest.
+Give every direction a defensible thesis. When comparing multiple directions, give each a different dominant gesture and use shared content to make comparison honest.
 
 ### 3. Build isolated prototypes
 
@@ -54,7 +54,7 @@ Create framework-appropriate routes or components such as `/design-lab/homepage/
 
 Protect production behavior. Do not connect prototypes to real APIs, databases, authentication, payments, jobs, controllers, or stable business logic merely to preview design. Include mock-content extremes that expose visual fragility.
 
-Bring all three prototypes to comparable directional fidelity before polishing one. For each visual edit, render the affected prototype, inspect the relevant viewport or interaction, and check obvious runtime errors. Defer repository-wide tests, builds, and unrelated refactoring.
+Bring every created prototype to comparable directional fidelity before polishing one. For each visual edit, render the affected prototype, inspect the relevant viewport or interaction, and check obvious runtime errors. Defer repository-wide tests, builds, and unrelated refactoring.
 
 ### 4. Compare and obtain selection
 
@@ -72,7 +72,7 @@ When `frontend-visual-qa` is unavailable, render the refined prototype at repres
 
 ### 6. Integrate after approval
 
-For substantial prototype-first work, execute [prototype archive and production handoff](references/prototype-handoff.md) before changing production code. Treat the approved prototype as a visual specification expressed in working code. Port its presentation into the application, replace mocks with real data, reuse existing APIs, preserve business rules, and adapt components to production architecture. Do not replace proven application logic with prototype logic or use redesign as permission for unrelated cleanup.
+For substantial prototype-first work, execute [production adoption and exploration record](references/prototype-handoff.md). Treat the approved prototype as a visual specification expressed in working code. Port its presentation into the application, replace mocks with real data, reuse existing APIs, preserve business rules, and adapt components to production architecture. Validate the production implementation before archiving the lab and removing exploration from the production line. Do not replace proven application logic with prototype logic or use redesign as permission for unrelated cleanup.
 
 ### 7. Validate production
 
@@ -92,7 +92,7 @@ After integration, run validation proportional to the affected production surfac
 - Each prototype has a distinct thesis and dominant gesture, not merely different colors or minor layout changes.
 - The user selects or approves a direction before production integration begins.
 - Existing application and backend behavior remain untouched during exploration.
-- The prototype archive and production handoff completion criteria pass before substantial production integration.
+- The production-adoption and exploration-record criteria pass: the approved design ships and, when Git is available, the archive branch preserves the exploration.
 - Every multi-direction lab supports direct, accessible switching from each prototype route without an index-page round trip.
 - Prototype iteration uses the smallest useful validation; post-integration validation matches scope and risk.
 - Production and shared styles express tunable values through semantic tokens rather than scattered hard-coded values.

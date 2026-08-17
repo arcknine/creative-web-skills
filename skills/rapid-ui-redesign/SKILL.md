@@ -42,18 +42,18 @@ Render each variant in the most relevant viewport and state, check obvious overf
 
 Present every variant with the same state and a short strongest-at/tradeoff comparison. Ask the user to select one, request a revision, or name a hybrid. Selection approves the direction, not production integration; stop and obtain separate integration approval before production changes.
 
-### 6. Archive and fold in
+### 6. Adopt and archive
 
-After separate integration approval, read and execute [prototype archive and production handoff](../creative-frontend-design/references/prototype-handoff.md), using `design/<scope>-variants` for the archive branch. Rewrite the selected direction in the existing production component; do not promote prototype shortcuts directly.
+After separate integration approval, read and execute [rapid production handoff](references/production-handoff.md). Rewrite the selected direction in the existing production component; do not promote prototype shortcuts directly. Complete and verify the production implementation before archiving the variants. Continue past intermediate commits and checkpoints unless a genuine blocker prevents the completion criteria from passing.
 
 ### 7. Verify the production change
 
-Read [accessible performance](../creative-frontend-design/references/accessible-performance.md). Repeat the targeted evidence used for comparison and run automated checks proportional to the production surface changed. Broaden validation only when the fold-in crosses shared components, routing, data contracts, or application behavior. Use `frontend-visual-qa` only when the user requests deep systematic review or the integration exposes material visual uncertainty.
+Repeat the targeted evidence used for comparison and run automated checks proportional to the production surface changed. Preserve semantic structure, focus and keyboard behavior, readable contrast, reduced-motion behavior, responsive media delivery, and useful loading or failure states. Broaden validation only when the integration crosses shared components, routing, data contracts, or application behavior. Use `frontend-visual-qa` only when the user requests deep systematic review or the integration exposes material visual uncertainty.
 
 ## Completion criteria
 
 - The work answers one bounded UI question without changing the wider brand or application architecture.
 - Variants differ structurally, remain cheap to compare, and preserve stable product context.
 - The user selects or defines the result before production code changes.
-- The shared prototype handoff criteria pass before integration, and the production result preserves semantics, keyboard behavior, contrast, reduced motion, image delivery, and performance.
+- The rapid production handoff criteria pass, and the production result preserves semantics, keyboard behavior, contrast, reduced motion, image delivery, and performance.
 - The production implementation preserves existing behavior and passes targeted rendered and automated validation.

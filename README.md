@@ -24,21 +24,21 @@ The aim is not to reproduce any reference site. It is to extract transferable pr
 
 | Need | Use | Result |
 | --- | --- | --- |
-| Rapidly redesign an existing working UI while retaining its identity and architecture | `rapid-ui-redesign` | Isolated variants → selection → optional focused integration |
+| Rapidly redesign an existing working UI while retaining its identity and architecture | `rapid-ui-redesign` | Isolated variants → selection → approved focused integration |
 | Create or revise art direction and prototypes | `creative-frontend-design` | Concept, responsive visual system, and implementation |
 | Add or refine animation and interaction | `motion-art-direction` | Intentional motion language with reduced-motion behavior |
 | Audit and fix an implemented page from rendered evidence | `frontend-visual-qa` | Prioritized fixes verified across viewports and states |
 | Take a substantial page from concept through production | `creative-web-workflow` plus all three specialists | Concept → prototype → compare → refine → motion → QA → approval → integration → validation |
 
-The design, motion, and visual-QA specialists work independently. `rapid-ui-redesign` shares the design skill's compact accessibility and prototype-handoff references, so install those two together. The full workflow is a collection-level orchestrator: install it with all three specialists because its portable `SKILL.md` delegates each phase to those sibling skills.
+The four specialist skills work independently. The full workflow is a collection-level orchestrator: install it with the design, motion, and visual-QA specialists because its portable `SKILL.md` delegates each phase to those sibling skills.
 
 Choose by lifecycle: `rapid-ui-redesign` keeps an existing working UI's identity, data contracts, and application architecture while testing visual presentation—even when the target is a whole existing page. `creative-frontend-design` supplies deeper original art direction. `creative-web-workflow` is reserved for complete discovery-to-production redesigns, especially new identity, coordinated multi-page work, motion direction, and systematic visual QA.
 
-For prototype-first work in a Git repository, approval checkpoints the complete design lab—including rejected and hybrid directions—on a dedicated prototype branch. A separate production-only integration branch removes the entire prototype lab and files made orphaned by the redesign, then implements the selected visual specification in the existing application. Every explored direction remains available from the prototype archive branch.
+After production-integration approval, the selected presentation is rebuilt through the existing application architecture and validated against the prototype. The complete design lab—including rejected and hybrid directions—is then preserved on an archive branch, and comparison-only machinery is removed from the production line. Intermediate commits are recovery points, not reasons to hand back an unfinished integration.
 
 ## Compatibility
 
-The portable core of each specialist is a spec-compliant `SKILL.md` plus relative links to optional references and examples. `rapid-ui-redesign` uses two focused references from `creative-frontend-design`, so install those skills together. The combined workflow is portable when installed with its three sibling skills. The collection declares no runtime, MCP, framework, or operating-system dependency. Agents may use whatever frontend stack and browser tooling the project already provides.
+The portable core of each specialist is a spec-compliant `SKILL.md` plus relative links to references and examples within its own skill directory. The combined workflow is portable when installed with its three sibling skills. The collection declares no runtime, MCP, framework, or operating-system dependency; individual tasks still require the project's own frontend stack and suitable rendering tools.
 
 `frontend-visual-qa` needs rendered browser or screenshot evidence to claim visual verification. Without those capabilities it can still review supplied screenshots and code, but it must label unobserved behavior as unverified.
 
@@ -68,22 +68,22 @@ Install one specialist skill:
 npx skills add arcknine/creative-web-skills --skill creative-frontend-design
 ```
 
-Install the lightweight redesign skill with its shared-reference dependency:
+Install the lightweight redesign skill:
 
 ```bash
-npx skills add arcknine/creative-web-skills --skill rapid-ui-redesign --skill creative-frontend-design
+npx skills add arcknine/creative-web-skills --skill rapid-ui-redesign
 ```
 
 Install several skills:
 
 ```bash
-npx skills add arcknine/creative-web-skills --skill creative-frontend-design --skill motion-art-direction --skill frontend-visual-qa
+npx skills add arcknine/creative-web-skills --skill creative-frontend-design motion-art-direction frontend-visual-qa
 ```
 
 Install the full workflow and its three specialist dependencies:
 
 ```bash
-npx skills add arcknine/creative-web-skills --skill creative-web-workflow --skill creative-frontend-design --skill motion-art-direction --skill frontend-visual-qa
+npx skills add arcknine/creative-web-skills --skill creative-web-workflow creative-frontend-design motion-art-direction frontend-visual-qa
 ```
 
 The CLI installs at project scope by default and can detect supported agents. Use `-g` for a user-level install and `-a` to choose an agent explicitly:
@@ -131,7 +131,7 @@ The update command relies on source information recorded during CLI installation
 
 ## Claude Code
 
-Claude Code supports the Agent Skills format and can invoke a skill automatically from its description or directly as `/skill-name`. Use the targeted CLI command above, or copy a complete specialist folder to `~/.claude/skills/` for user scope or `.claude/skills/` for project scope. Copy the workflow and its three dependencies when using `creative-web-workflow`. See [Claude Code's skills documentation](https://code.claude.com/docs/en/skills) for discovery and precedence behavior.
+Use the Skills CLI with `-a claude-code`, or follow Claude Code's current skill-installation documentation. Install the workflow with its three dependencies. Invocation syntax and discovery behavior belong to the client and may evolve; the portable contract in this repository is the Agent Skills directory format.
 
 ## Codex
 
@@ -141,7 +141,7 @@ Each skill also includes `agents/openai.yaml` for Codex-facing display metadata.
 
 ## Cursor
 
-Use the Skills CLI with `-a cursor`. Keep the complete skill directory so references and examples remain available; copying only `SKILL.md` discards much of the guidance.
+The current Skills CLI accepts `-a cursor`. Keep the complete skill directory so references and examples remain available; copying only `SKILL.md` discards much of the guidance. Confirm discovery in the installed Cursor version because client support can evolve independently of this repository.
 
 ## Usage
 

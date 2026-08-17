@@ -14,5 +14,9 @@ This repository contains reusable Agent Skills for AI coding agents. Inspect eve
 - Favor original art direction derived from the product, audience, and content. Never instruct an agent to clone a reference website.
 - Keep Markdown readable and portable. The `name` must match its directory; the `description` must state both what the skill does and the concrete tasks that should trigger it. Default to only those two frontmatter fields unless a standard optional field is genuinely required.
 - Keep product metadata outside the portable core. `agents/openai.yaml` may improve Codex presentation but must not be required to understand or run a skill.
+- Keep standalone skills self-contained. Cross-skill links belong only in an orchestrator or in a skill whose dependency contract is explicit in its `SKILL.md` and installation documentation.
+- Before adding a skill, define its trigger and authority boundary against its nearest neighbors; reject a new skill whose behavior belongs in an existing source of truth.
+- Keep the portable core vendor-neutral. Put client-specific presentation or invocation details in optional metadata or public installation documentation.
+- Update README skill selection, dependencies, workflow descriptions, and commands whenever public behavior or installation changes.
 
 Before finishing a change, run `npx skills add . --list`, validate every affected skill against the Agent Skills specification, inspect cross-links, search for duplicated guidance, and verify that instructions remain agent-oriented.

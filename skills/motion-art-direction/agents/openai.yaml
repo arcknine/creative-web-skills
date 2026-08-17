@@ -1,4 +1,4 @@
 interface:
   display_name: "Motion Art Direction"
-  short_description: "Choreograph intentional premium web motion"
+  short_description: "Choreograph purposeful, accessible web motion"
   default_prompt: "Use $motion-art-direction to define and implement an intentional motion system for this website."

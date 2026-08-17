@@ -15,7 +15,7 @@ Require sibling installations of [creative frontend design](../creative-frontend
 
 ### 1. Explore
 
-Read [creative frontend design](../creative-frontend-design/SKILL.md) completely. Execute its workflow through prototype comparison. Keep its prototype-first branch, reference routing, and completion criteria authoritative.
+Read [creative frontend design](../creative-frontend-design/SKILL.md) completely. Execute its workflow through the direction-approval gate, including comparison when multiple prototypes exist. Keep its prototype-first branch, reference routing, and completion criteria authoritative.
 
 ### 2. Select
 
@@ -35,11 +35,11 @@ Before pausing, report `phase: integration approval`, the approved-direction spe
 
 ### 5. Integrate and validate
 
-After approval, execute the design skill's prototype-checkpoint, branch-handoff, production-integration, and validation stages in order. Then execute the visual-QA skill against the production result and use the motion skill for any integration-specific motion regression. Run only the automated checks selected by the design skill's risk-proportionate validation rules.
+After approval, complete and validate the approved design in production without pausing at intermediate checkpoints. Then preserve the lab on its archive branch, remove exploration from the production line, and execute the visual-QA skill against the production result. Use the motion skill for any integration-specific motion regression. Run only the automated checks selected by the design skill's risk-proportionate validation rules.
 
 ## Completion criteria
 
 - The phases run in order and both approval gates are satisfied when applicable.
-- The design skill's prototype handoff criteria pass before production integration.
+- The design skill's production-adoption and exploration-record criteria pass after production integration.
 - Every specialist's applicable completion criteria pass in its own phase.
 - The final handoff names the selected direction, production validation performed, rendered evidence, and any unverified risk.

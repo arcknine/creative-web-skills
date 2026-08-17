@@ -149,7 +149,7 @@ Keep rejected prototypes available for reference and stop polishing them. Consol
 
 Use `motion-art-direction` for the refined prototype's substantial choreography, allowing exploratory implementation to remain local until the language is approved. Use `frontend-visual-qa` against the isolated refined prototype. Inspect desktop, tablet, mobile, hierarchy, typography, crops, spacing, rhythm, motion, interaction, accessibility basics, and mock-data stressors before integration.
 
-Before changing production code, execute [prototype archive and production handoff](prototype-handoff.md). When Git is unavailable, preserve every direction in the isolated lab, report that no branch checkpoint can be created, and obtain direction before integration.
+After integration approval, execute [production adoption and exploration record](prototype-handoff.md): implement and validate the approved direction first, then preserve the design lab on an archive branch outside the production line. When Git is unavailable, retain every direction in the isolated lab, report that no archive branch can be created, and obtain direction before removing it.
 
 ## Integrate the approved specification
 
