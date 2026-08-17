@@ -1,0 +1,4 @@
+interface:
+  display_name: "Creative Web Workflow"
+  short_description: "Run design, motion, and visual QA together"
+  default_prompt: "Use $creative-web-workflow to art-direct, prototype, add intentional motion, visually verify, and integrate this frontend from end to end."

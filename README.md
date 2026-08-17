@@ -2,7 +2,7 @@
 
 **Agent skills for building websites that don't look AI-generated.**
 
-Creative Web Skills packages reusable art direction, motion direction, and visual QA workflows for coding agents that support the [Agent Skills format](https://agentskills.io/specification), including Codex, Claude Code, Cursor, and compatible tools.
+Creative Web Skills packages three focused frontend skills and one end-to-end orchestrator for coding agents that support the [Agent Skills format](https://agentskills.io/specification), including Codex, Claude Code, Cursor, and compatible tools.
 
 ## Why this exists
 
@@ -14,13 +14,25 @@ The aim is not to reproduce any reference site. It is to extract transferable pr
 
 | Skill | Purpose |
 | --- | --- |
+| `creative-web-workflow` | Run design, motion, visual QA, integration, and production verification as one coordinated workflow. |
 | `creative-frontend-design` | Explore three isolated directions by default, then art-direct and integrate the approved public-facing website. |
 | `motion-art-direction` | Define and build intentional motion, scroll choreography, transitions, and micro-interactions. |
 | `frontend-visual-qa` | Review rendered pages, prioritize visual defects, implement targeted fixes, and verify again. |
 
+## Choose how to use the collection
+
+| Need | Use | Result |
+| --- | --- | --- |
+| Create or revise art direction and prototypes | `creative-frontend-design` | Concept, responsive visual system, and implementation |
+| Add or refine animation and interaction | `motion-art-direction` | Intentional motion language with reduced-motion behavior |
+| Audit and fix an implemented page from rendered evidence | `frontend-visual-qa` | Prioritized fixes verified across viewports and states |
+| Take a substantial page from concept through production | `creative-web-workflow` plus all three specialists | Concept → prototype → compare → refine → motion → QA → approval → integration → validation |
+
+The specialists work independently. The full workflow is a collection-level orchestrator: install it with all three specialists because its portable `SKILL.md` delegates each phase to those sibling skills.
+
 ## Compatibility
 
-The portable core of each package is a spec-compliant `SKILL.md` plus relative links to optional references and examples. The skills declare no runtime, MCP, framework, or operating-system dependency. Agents may use whatever frontend stack and browser tooling the project already provides.
+The portable core of each specialist is a spec-compliant `SKILL.md` plus relative links to optional references and examples. The combined workflow is portable when installed with its three sibling skills. The collection declares no runtime, MCP, framework, or operating-system dependency. Agents may use whatever frontend stack and browser tooling the project already provides.
 
 `frontend-visual-qa` needs rendered browser or screenshot evidence to claim visual verification. Without those capabilities it can still review supplied screenshots and code, but it must label unobserved behavior as unverified.
 
@@ -44,7 +56,7 @@ Install the collection interactively with the [Skills CLI](https://www.skills.sh
 npx skills add arcknine/creative-web-skills
 ```
 
-Install one skill:
+Install one specialist skill:
 
 ```bash
 npx skills add arcknine/creative-web-skills --skill creative-frontend-design
@@ -54,6 +66,12 @@ Install several skills:
 
 ```bash
 npx skills add arcknine/creative-web-skills --skill creative-frontend-design --skill motion-art-direction --skill frontend-visual-qa
+```
+
+Install the full workflow and its three specialist dependencies:
+
+```bash
+npx skills add arcknine/creative-web-skills --skill creative-web-workflow --skill creative-frontend-design --skill motion-art-direction --skill frontend-visual-qa
 ```
 
 The CLI installs at project scope by default and can detect supported agents. Use `-g` for a user-level install and `-a` to choose an agent explicitly:
@@ -94,18 +112,18 @@ npx skills update
 Pass multiple names to update this collection together, and add `-y` to skip the scope prompt:
 
 ```bash
-npx skills update creative-frontend-design motion-art-direction frontend-visual-qa -y
+npx skills update creative-web-workflow creative-frontend-design motion-art-direction frontend-visual-qa -y
 ```
 
 The update command relies on source information recorded during CLI installation. If a skill was copied manually, reinstall it with `npx skills add arcknine/creative-web-skills` so future updates can be tracked.
 
 ## Claude Code
 
-Claude Code supports the Agent Skills format and can invoke a skill automatically from its description or directly as `/skill-name`. Use the targeted CLI command above, or copy a complete skill folder to `~/.claude/skills/` for user scope or `.claude/skills/` for project scope. See [Claude Code's skills documentation](https://code.claude.com/docs/en/skills) for discovery and precedence behavior.
+Claude Code supports the Agent Skills format and can invoke a skill automatically from its description or directly as `/skill-name`. Use the targeted CLI command above, or copy a complete specialist folder to `~/.claude/skills/` for user scope or `.claude/skills/` for project scope. Copy all four folders when using `creative-web-workflow` so its sibling links resolve. See [Claude Code's skills documentation](https://code.claude.com/docs/en/skills) for discovery and precedence behavior.
 
 ## Codex
 
-Use the targeted CLI command above and confirm all three names appear in Codex's available-skills list. Invoke one explicitly with `$creative-frontend-design`, `$motion-art-direction`, or `$frontend-visual-qa`, or describe a matching task and allow Codex to select it from the trigger description.
+Use the targeted CLI command above and confirm the installed names appear in Codex's available-skills list. Invoke the combined workflow with `$creative-web-workflow`, invoke a specialist with `$creative-frontend-design`, `$motion-art-direction`, or `$frontend-visual-qa`, or describe a matching task and allow Codex to select it from the trigger description.
 
 Each skill also includes `agents/openai.yaml` for Codex-facing display metadata. This optional product metadata sits outside the portable `SKILL.md` core and does not change behavior in agents that ignore it.
 
@@ -115,7 +133,7 @@ Use the Skills CLI with `-a cursor`. Keep the complete skill directory so refere
 
 ## Usage
 
-Name a skill explicitly when you want predictable behavior. Supply the product, audience, content, constraints, available assets, and any references. References define a quality bar—not a copying target. Use the skills separately when possible; combine all three only when the task includes design, motion, and rendered verification.
+Name a skill explicitly when you want predictable behavior. Supply the product, audience, content, constraints, available assets, and any references. References define a quality bar—not a copying target. Use a specialist for one phase; use `creative-web-workflow` when the request spans the complete concept-to-production lifecycle.
 
 ```text
 Use the creative-frontend-design skill.
@@ -134,10 +152,10 @@ Create three distinct isolated directions with realistic shared mock content.
 Compare them visually and wait for my selection before integration.
 ```
 
-Combine all three skills for an implementation-and-review loop:
+Run the full implementation-and-review workflow:
 
 ```text
-Use creative-frontend-design, motion-art-direction, and frontend-visual-qa.
+Use $creative-web-workflow.
 Art-direct and build a launch site for a coastal boutique hotel.
 First create three isolated, genuinely different directions and compare them.
 Do not change production code until I select a direction.
@@ -148,6 +166,7 @@ and perform production validation proportional to the integration risk.
 
 ## Example prompts
 
+- “Use `$creative-web-workflow` to take this new campaign site from three concepts through selection, motion, integration, and final browser QA.”
 - “Use `creative-frontend-design` to redesign this portfolio around the artist's archival process. Keep the existing stack and content.”
 - “Use `creative-frontend-design` to give me one concept only and iterate it in isolation.”
 - “Use `motion-art-direction` to replace this page's uniform fade-ups with a restrained motion system tied to its editorial hierarchy.”
@@ -157,6 +176,9 @@ and perform production validation proportional to the integration risk.
 
 ```text
 skills/
+├── creative-web-workflow/
+│   ├── SKILL.md
+│   └── agents/openai.yaml
 ├── creative-frontend-design/
 │   ├── SKILL.md
 │   ├── agents/openai.yaml

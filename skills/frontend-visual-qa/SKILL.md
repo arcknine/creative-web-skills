@@ -1,6 +1,6 @@
 ---
 name: frontend-visual-qa
-description: Run evidence-based visual QA on implemented frontends and fix the highest-impact problems. Use when asked to review, audit, critique, compare, polish, or visually debug a page; inspect screenshots or reference fidelity; catch responsive, typography, spacing, crop, hierarchy, motion, accessibility, or generic AI-design failures; and verify improvements in a browser.
+description: Review and fix implemented frontends from rendered evidence. Use for screenshot or browser audits, visual critique, responsive QA, reference-fidelity checks, evidence-led polish, visual debugging, and verification of hierarchy, typography, spacing, crops, composition, motion, accessibility, or generic AI-design failures.
 ---
 
 # Frontend visual QA

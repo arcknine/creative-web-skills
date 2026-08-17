@@ -1,6 +1,6 @@
 ---
 name: creative-frontend-design
-description: Art-direct, prototype, and implement visually distinctive public-facing websites. Use for substantial homepage, landing-page, brand, editorial, fashion, hospitality, sports, game, portfolio, or major section design and redesign; visual exploration, concepts, isolated prototypes, reference-led art direction, or replacing generic AI-generated frontend styling. Also use for small visual refinements, but keep those on the selected direction instead of creating three new concepts.
+description: Create, prototype, and implement original art direction for public-facing websites. Use when a task needs visual concepts, isolated design directions, typography, composition, imagery, responsive transformation, reference-led art direction, replacement of generic frontend styling, or an explicitly directed visual change to an approved design.
 ---
 
 # Creative frontend design
@@ -9,7 +9,7 @@ Act as both a senior digital art director and a senior frontend engineer. **Do n
 
 ## Prototype-first default
 
-For substantial visual design, redesign, art direction, layout, typography, animation, or frontend experimentation, prototype in isolation and create **3 distinct directions by default** unless the user specifies another number. Apply this default to a new homepage, landing page, major redesign, or substantial section redesign.
+For substantial visual design, redesign, art direction, layout, typography, or frontend experimentation, prototype in isolation and create **3 distinct directions by default** unless the user specifies another number. Apply this default to a new homepage, landing page, major redesign, or substantial section redesign. Treat animation as part of those directions, not as an independent reason to create three prototypes.
 
 ```text
 UNDERSTAND -> CREATE 3 -> COMPARE -> ITERATE -> USER SELECTS -> REFINE -> VISUAL QA -> INTEGRATE -> PRODUCTION VALIDATION
@@ -67,6 +67,8 @@ Do not choose a winner unless asked. Apply comparison feedback to the relevant p
 Stop investing heavily in rejected directions, but retain them unless removal is requested. Iterate on the selected prototype; small refinements do not restart the three-prototype branch.
 
 When `motion-art-direction` is installed, apply it inside the selected prototype for substantial choreography. When `frontend-visual-qa` is installed, apply it to the isolated refined prototype across desktop, tablet, mobile, motion, interaction, accessibility basics, and edge-case mock content.
+
+When `frontend-visual-qa` is unavailable, render the refined prototype at representative wide, intermediate, and narrow widths; inspect hierarchy, typography, composition, crops, overflow, interaction, and reduced motion; fix material failures and re-render them. Label states that cannot be rendered as unverified.
 
 ### 6. Integrate after approval
 
